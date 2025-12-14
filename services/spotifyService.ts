@@ -103,7 +103,8 @@ export const searchTracks = async (query: string): Promise<SpotifyTrack[]> => {
       }
 
       const data = await response.json();
-      return data.tracks || [];
+      console.log('Vercel response:', data);
+      return Array.isArray(data.tracks) ? data.tracks : [];
     } else {
       // Direct Spotify API call
       const response = await fetch(
