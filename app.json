@@ -17,7 +17,11 @@
       "buildNumber": "1",
       "infoPlist": {
         "NSLocalNetworkUsageDescription": "Pulse uses local network to connect to your music services.",
-        "NSBonjourServiceTypes": ["_http._tcp"]
+        "NSBonjourServiceTypes": [
+          "_http._tcp",
+          "_http._tcp"
+        ],
+        "ITSAppUsesNonExemptEncryption": false
       }
     },
     "android": {
@@ -58,6 +62,12 @@
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "025decad-97e0-4bc8-bc31-784c4677ab69"
+      }
     }
   }
 }

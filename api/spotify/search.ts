@@ -38,13 +38,17 @@ export default async function handler(
 
     const data = await response.json();
 
+    if (!data.tracks || !data.tracks.items || data.tracks.items.length === 0) {
+      return res.status(200).json({ tracks: [] });
+    }
+
     const tracks = data.tracks.items.map((track: any) => ({
       id: track.id,
       name: track.name,
-      artist: track.artists.map((a: any) => a.name).join(', '),
-      artistId: track.artists[0]?.id || '',
-      album: track.album.name,
-      imageUrl: track.album.images[0]?.url || null,
+      artist: track.artists?.map((a: any) => a.name).join(', ') || 'Unknown',
+      artistId: track.artists?.[0]?.id || '',
+      album: track.album?.name || 'Unknown',
+      imageUrl: track.album?.images?.[0]?.url || null,
       artistImageUrl: null,
       uri: track.uri,
       previewUrl: track.preview_url || null,
