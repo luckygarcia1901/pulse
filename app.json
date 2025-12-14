@@ -1,17 +1,28 @@
 {
   "expo": {
     "name": "Pulse",
-    "slug": "Pulse",
+    "slug": "pulse",
     "version": "1.0.0",
+    "runtimeVersion": "1.0.0",
+    "description": "Track your mood and discover the music that defines your emotions. Pulse is a personal music diary that connects your feelings with the songs that capture them.",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "scheme": "pulse",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
+    "privacy": "public",
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.pulse.app",
+      "buildNumber": "1",
+      "infoPlist": {
+        "NSLocalNetworkUsageDescription": "Pulse uses local network to connect to your music services.",
+        "NSBonjourServiceTypes": ["_http._tcp"]
+      }
     },
     "android": {
+      "package": "com.pulse.app",
+      "versionCode": 1,
       "adaptiveIcon": {
         "backgroundColor": "#E6F4FE",
         "foregroundImage": "./assets/images/android-icon-foreground.png",
@@ -19,7 +30,11 @@
         "monochromeImage": "./assets/images/android-icon-monochrome.png"
       },
       "edgeToEdgeEnabled": true,
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "permissions": [
+        "android.permission.INTERNET",
+        "android.permission.ACCESS_NETWORK_STATE"
+      ]
     },
     "web": {
       "output": "static",

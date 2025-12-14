@@ -31,7 +31,7 @@ yarn-error.*
 *.pem
 
 # local env files
-.env*.local
+# .env*.local  # Commented out to allow .env.local creation
 
 # typescript
 *.tsbuildinfo
