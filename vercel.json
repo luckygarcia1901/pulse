@@ -4,7 +4,7 @@
   "outputDirectory": ".",
   "functions": {
     "api/**/*.ts": {
-      "runtime": "node18.x"
+      "runtime": "nodejs18.x"
     }
   }
 }
